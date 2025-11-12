@@ -1,0 +1,75 @@
+:root {
+  /* Background */
+  --bg-gradient-start: #060B21;
+  --bg-gradient-mid: #0B183B;
+  --bg-gradient-end: #101A30;
+
+  /* Solid Surface (previously Glassmorphism) */
+  --surface-color: #f9fafb;
+  --surface-border-color: #e5e7eb;
+  --surface-blur: 0px;
+  --surface-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+  /* Typography */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+
+  /* Accent Colors */
+  --accent-blue: #4E9FFF;
+  --accent-green: #62F5A5;
+  --accent-magenta: #C55FFF;
+  --accent-amber: #FFB347;
+
+  /* Radii */
+  --radius-card: 16px;
+  --radius-button: 20px;
+  --radius-input: 12px;
+  --radius-round: 50%;
+
+  /* Motion */
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-page: 400ms;
+}
+
+/* Card Content Color Overrides */
+.glass-card {
+  --text-primary: #1f2937; /* slate-800 */
+  --text-secondary: #4b5563; /* slate-600 */
+  --text-tertiary: #6b7280; /* slate-500 */
+}
+/* Ensure accent colors in pills have enough contrast on light cards */
+.glass-card .text-accent-blue { color: #2563EB; }
+.glass-card .text-accent-green { color: #16a34a; }
+.glass-card .text-accent-magenta { color: #9333ea; }
+.glass-card .text-accent-amber { color: #d97706; }
+
+
+/* Utility classes */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+
+.bg-accent-blue { background-color: var(--accent-blue); }
+.text-accent-blue { color: var(--accent-blue); }
+.border-accent-blue { border-color: var(--accent-blue); }
+
+.bg-accent-green { background-color: var(--accent-green); }
+.text-accent-green { color: var(--accent-green); }
+
+.bg-accent-magenta { background-color: var(--accent-magenta); }
+.text-accent-magenta { color: var(--accent-magenta); }
+
+.bg-accent-amber { background-color: var(--accent-amber); }
+.text-accent-amber { color: var(--accent-amber); }
+
+/* Page Transitions */
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition {
+  animation: page-fade-in var(--transition-page) ease-out forwards;
+}

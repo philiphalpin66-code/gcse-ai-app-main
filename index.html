@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF--8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCSE AI Coach</title>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.552.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.5.0/"
+  }
+}
+</script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./styles/theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 400;
+        margin: 0;
+
+        /* Locked dark theme as requested */
+        background-color: #060B21 !important;
+        background-image: linear-gradient(180deg, #060B21 0%, #0B183B 50%, #101A30 100%) !important;
+        background-attachment: fixed;
+        background-size: cover;
+        color: #ffffff;
+
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Gradient text utility */
+    .text-gradient {
+        background-image: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+    
+    /* Animation utilities */
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
+    
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
+    
+    /* Shimmer effect for skeletons */
+     .shimmer-bg {
+        background: rgba(255, 255, 255, 0.05);
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.05) 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        display: inline-block;
+        position: relative;
+        animation: placeholderShimmer 1.5s linear infinite forwards;
+    }
+
+    @keyframes placeholderShimmer {
+        0% { background-position: -468px 0; }
+        100% { background-position: 468px 0; }
+    }
+    
+    /* Unified Shimmer System */
+    @keyframes smoothShimmer {
+      0%   { background-position: 0% 50%; filter: brightness(1.2) saturate(1.1); }
+      50%  { background-position: 100% 50%; filter: brightness(1.35) saturate(1.25); }
+      100% { background-position: 0% 50%; filter: brightness(1.2) saturate(1.1); }
+    }
+    
+    /* Global Button Style */
+    .btn-primary, .btn-secondary {
+      /* border-radius is now handled by the global rounding system */
+      background: linear-gradient(90deg,#3C8EEB 0%,#4FE094 100%);
+      background-size: 200% 200%;
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 0 12px rgba(78,159,255,0.4);
+      transition: all 0.3s ease-in-out;
+      padding: 0.75rem 1.5rem; /* default padding */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px; /* A11Y: Ensure minimum tap target size */
+      -webkit-tap-highlight-color: transparent; /* A11Y: Remove tap highlight on mobile */
+      animation: smoothShimmer 10s ease-in-out infinite;
+    }
+    .btn-primary:focus-visible, .btn-secondary:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 18px rgba(98,245,165,0.5);
+    }
+    .btn-primary:active, .btn-secondary:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 22px rgba(78,159,255,0.5);
+      transition: box-shadow 0.15s ease, transform 0.1s ease;
+    }
+    .btn-primary:disabled, .btn-secondary:disabled {
+        background: linear-gradient(90deg, #94a3b8, #94a3b8);
+        opacity: 0.5;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: scale(1);
+        animation: none; /* Disable shimmer on disabled buttons */
+    }
+    
+    /* Active Nav Item */
+    .nav-item-active {
+      background: linear-gradient(90deg,#4E9FFF 0%,#62F5A5 100%);
+      background-size: 200% 200%;
+      animation: smoothShimmer 10s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(78,159,255,0.5);
+      color: var(--text-primary);
+      font-weight: 600;
+      /* border-radius is now handled by the global rounding system */
+    }
+
+    /* Planner Styles */
+    .current-day-glow {
+        box-shadow: 0 0 25px 5px rgba(78, 159, 255, 0.25);
+        border-color: rgba(78, 159, 255, 0.5) !important;
+    }
+    .planner-pill.active > span {
+        background: linear-gradient(90deg,#4E9FFF 0%,#62F5A5 100%);
+        background-size: 200% 200%;
+        animation: smoothShimmer 10s ease-in-out infinite;
+        box-shadow: 0 0 10px rgba(78,159,255,0.5);
+        color: white;
+        border-color: transparent;
+    }
+
+    /* Mock Exam Progress Bar */
+    .progress-bar-neon {
+        background-color: var(--accent-blue);
+        box-shadow: 0 0 10px var(--accent-blue), 0 0 20px var(--accent-blue);
+        transition: width 0.4s ease-in-out;
+    }
+
+    /* Question Transition */
+    .question-container {
+        transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+    }
+    .question-enter {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    .question-exit {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    /* Flashcard Flip Animation */
+    .flashcard-container {
+      perspective: 1000px;
+    }
+    .flashcard {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem; /* Match GlassCard padding */
+    }
+    .flashcard-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Flashcard Answer Feedback Animations */
+    .flashcard-wrapper {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .flashcard-correct {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px 5px rgba(98, 245, 165, 0.4); /* --accent-green */
+    }
+    .flashcard-incorrect {
+        transform: translateY(4px);
+        box-shadow: 0 0 25px 5px rgba(197, 95, 255, 0.4); /* --accent-magenta */
+    }
+
+    /* AI Coach Chat Styles */
+    .chat-bubble {
+        padding: 0.75rem 1.25rem;
+        max-width: 80%;
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--surface-border-color);
+        box-shadow: var(--surface-shadow);
+        animation: fade-in 0.4s ease forwards;
+    }
+    .chat-bubble-ai {
+        background: linear-gradient(135deg, rgba(197, 95, 255, 0.15), rgba(78, 159, 255, 0.25));
+    }
+    .chat-bubble-user {
+        background: rgba(78, 159, 255, 0.25);
+    }
+    .chat-container {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-blue) transparent;
+    }
+    .confidence-ring-wrapper {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 10;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    /* Particle Background */
+    #particle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(78, 159, 255, 0.3);
+      animation: float 25s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+    }
+    
+    /* Subject Icon Glow & Brightness */
+    .subject-icon {
+      filter: brightness(1.4) saturate(1.2);
+      transition: all 0.3s ease-in-out;
+      animation: smoothShimmer 10s ease-in-out infinite;
+    }
+    .subject-card:hover .subject-icon, .subject-row:hover .subject-icon, .planner-pill:hover .subject-icon {
+      transform: scale(1.05);
+      filter: brightness(1.6) saturate(1.3);
+    }
+    .subject-card.active .subject-icon, .planner-pill.active .subject-icon {
+      animation: 
+        iconGlow 3s ease-in-out infinite,
+        smoothShimmer 10s ease-in-out infinite;
+    }
+
+    @keyframes iconGlow {
+      0%, 100% { text-shadow: 0 0 12px rgba(var(--subject-accent-rgb), 0.4), 0 0 20px rgba(var(--subject-accent-rgb), 0.3); }
+      50% { text-shadow: 0 0 26px rgba(var(--subject-accent-rgb), 0.8), 0 0 40px rgba(var(--subject-accent-rgb), 0.6); }
+    }
+    
+    /* Progress Ring Shimmer */
+    .progress-ring {
+      animation: smoothShimmer 10s ease-in-out infinite;
+    }
+
+    /* Exam Board Selection Pills */
+    .exam-board-pill-container {
+      position: relative;
+    }
+    
+    .exam-board-pill {
+      padding: 8px 16px;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: all 0.3s ease-in-out;
+      border: 1px solid transparent;
+      min-width: 80px;
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
+
+    .exam-board-pill:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    
+    /* Tooltip styles */
+    .exam-board-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: 125%; /* Position above the pill */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 12px;
+      background: var(--surface-color);
+      backdrop-filter: var(--surface-blur);
+      border: 1px solid var(--surface-border-color);
+      border-radius: var(--radius-input) !important;
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 500;
+      width: 200px;
+      text-align: center;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .exam-board-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--surface-border-color) transparent transparent transparent;
+    }
+    
+    .exam-board-pill-container:hover .exam-board-tooltip,
+    .exam-board-pill-container:focus-within .exam-board-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Flow Controller Modal */
+    .flow-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(6, 11, 33, 0.5); /* --bg-gradient-start */
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      animation: fade-in 0.3s ease-out forwards;
+    }
+
+    /* Glowing Button Animation */
+    @keyframes buttonGlow {
+      0%, 100% { box-shadow: 0 0 12px rgba(98,245,165,0.4); }
+      50% { box-shadow: 0 0 24px rgba(98,245,165,0.8); }
+    }
+    .btn-glowing {
+      animation: 
+        smoothShimmer 10s ease-in-out infinite,
+        buttonGlow 2.5s ease-in-out infinite;
+    }
+    
+    /* Streak Glow */
+    @keyframes streakGlow {
+      0%, 100% { box-shadow: 0 0 8px rgba(255,179,71,0.3); }
+      50% { box-shadow: 0 0 16px rgba(255,179,71,0.6); }
+    }
+    .streak-glow {
+      animation: streakGlow 2.5s ease-in-out infinite;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div id="particle-container"></div>
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+  
+  <style id="global-rounded-corners">
+  /* 🔒 Universal rounding override */
+  * {
+    border-radius: 16px !important;
+  }
+
+  /* Finer tuning */
+  button, .btn, .pill, .tag, .exam-board-pill {
+    border-radius: 20px !important;
+  }
+
+  input, textarea, select {
+    border-radius: 12px !important;
+  }
+
+  .subject-icon, .avatar, .progress-ring, .badge, .profile-pic {
+    border-radius: 50% !important;
+  }
+  </style>
+</body>
+</html>

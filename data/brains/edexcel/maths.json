@@ -1,0 +1,59 @@
+
+{
+  "subject": "Mathematics",
+  "board": "Edexcel",
+  "spec_code": "1MA1",
+  "papers": [
+    {
+      "title": "Paper 1 (Non-Calculator)",
+      "weight": 33.33,
+      "topics": ["number", "algebra", "ratio-proportion-rates", "geometry-measures", "statistics-probability"]
+    },
+    {
+      "title": "Paper 2 (Calculator)",
+      "weight": 33.33,
+      "topics": ["number", "algebra", "ratio-proportion-rates", "geometry-measures", "statistics-probability"]
+    },
+    {
+      "title": "Paper 3 (Calculator)",
+      "weight": 33.34,
+      "topics": ["number", "algebra", "ratio-proportion-rates", "geometry-measures", "statistics-probability"]
+    }
+  ],
+  "ao": {
+    "AO1": 40,
+    "AO2": 30,
+    "AO3": 30
+  },
+  "topics": [
+    { "id": "number", "name": "Number", "spec_refs": ["1"], "weight": 25, "subtopics": [
+      {"id": "number-ops", "name": "Number operations", "weight": 25},
+      {"id": "fractions-percentages", "name": "Fractions and percentages", "weight": 35},
+      {"id": "indices-surds", "name": "Indices and surds", "weight": 20},
+      {"id": "standard-form", "name": "Standard form", "weight": 20}
+    ]},
+    { "id": "algebra", "name": "Algebra", "spec_refs": ["2"], "weight": 30, "subtopics": [
+      {"id": "expressions-formulae", "name": "Expressions and formulae", "weight": 30},
+      {"id": "graphs-of-functions", "name": "Graphs of functions", "weight": 30},
+      {"id": "equations-identities", "name": "Equations and identities", "weight": 25},
+      {"id": "sequences-series", "name": "Sequences and series", "weight": 15}
+    ]},
+    { "id": "ratio-proportion-rates", "name": "Ratio, proportion and rates of change", "spec_refs": ["3"], "weight": 20, "subtopics": [
+      {"id": "ratio-scale", "name": "Ratio and scale", "weight": 50},
+      {"id": "direct-inverse-proportion", "name": "Direct and inverse proportion", "weight": 50}
+    ]},
+    { "id": "geometry-measures", "name": "Geometry and measures", "spec_refs": ["4"], "weight": 15, "subtopics": [
+      {"id": "2d-3d-shapes", "name": "2D and 3D shapes", "weight": 30},
+      {"id": "angles-polygons", "name": "Angles and polygons", "weight": 30},
+      {"id": "pythagoras-trigonometry", "name": "Pythagoras and trigonometry", "weight": 40}
+    ]},
+    { "id": "statistics-probability", "name": "Statistics and Probability", "spec_refs": ["5", "6"], "weight": 10, "subtopics": [
+      {"id": "data-representation", "name": "Data representation", "weight": 50},
+      {"id": "probability-concepts", "name": "Probability concepts", "weight": 50}
+    ]}
+  ],
+  "links": {
+    "spec_url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assessment/gcse-maths-spec-2015.pdf",
+    "subject_page": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html"
+  }
+}

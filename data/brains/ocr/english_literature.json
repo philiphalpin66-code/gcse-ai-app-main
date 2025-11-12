@@ -1,0 +1,40 @@
+
+{
+  "subject": "English Literature",
+  "board": "OCR",
+  "spec_code": "J352",
+  "papers": [
+    {
+      "title": "Paper 1: Exploring modern and literary heritage texts",
+      "weight": 50,
+      "topics": ["modern-prose-drama", "19th-century-prose"]
+    },
+    {
+      "title": "Paper 2: Exploring poetry and unseen texts",
+      "weight": 50,
+      "topics": ["poetry-anthology-ocr", "unseen-poetry-ocr"]
+    }
+  ],
+  "ao": {
+    "AO1": 40, "AO2": 45, "AO3": 10, "AO4": 5
+  },
+  "topics": [
+    { "id": "modern-prose-drama", "name": "Modern Prose or Drama", "spec_refs": ["J352/01"], "weight": 25, "subtopics": [
+      {"id": "lit-ocr-modern", "name": "Analyse the chosen text (e.g., An Inspector Calls, Lord of the Flies)", "weight": 100}
+    ]},
+    { "id": "19th-century-prose", "name": "19th-Century Prose", "spec_refs": ["J352/01"], "weight": 25, "subtopics": [
+      {"id": "lit-ocr-19c", "name": "Analyse the chosen novel (e.g., A Christmas Carol, Jekyll and Hyde)", "weight": 100}
+    ]},
+    { "id": "poetry-anthology-ocr", "name": "Poetry Anthology", "spec_refs": ["J352/02"], "weight": 25, "subtopics": [
+      {"id": "lit-ocr-poetry-compare", "name": "Compare poems from the anthology cluster (e.g., Power and Conflict)", "weight": 100}
+    ]},
+    { "id": "unseen-poetry-ocr", "name": "Unseen Poetry", "spec_refs": ["J352/02"], "weight": 25, "subtopics": [
+      {"id": "lit-ocr-unseen-analysis", "name": "Analyse an unseen poem", "weight": 50},
+      {"id": "lit-ocr-unseen-compare", "name": "Compare two unseen poems", "weight": 50}
+    ]}
+  ],
+  "links": {
+    "spec_url": "https://www.ocr.org.uk/Images/164441-specification-accredited-gcse-english-literature-j352.pdf",
+    "subject_page": "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/"
+  }
+}

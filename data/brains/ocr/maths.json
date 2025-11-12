@@ -1,0 +1,58 @@
+
+{
+  "subject": "Mathematics",
+  "board": "OCR",
+  "spec_code": "J560",
+  "papers": [
+    {
+      "title": "Paper 1 (Foundation) / Paper 4 (Higher)",
+      "weight": 33.33,
+      "topics": ["number-concepts", "numerical-methods", "algebra-concepts", "graphs-tables-charts", "interpreting-representing-data"]
+    },
+    {
+      "title": "Paper 2 (Foundation) / Paper 5 (Higher)",
+      "weight": 33.33,
+      "topics": ["number-concepts", "algebra-concepts", "diagrams", "probability", "geometry-measures"]
+    },
+    {
+      "title": "Paper 3 (Foundation) / Paper 6 (Higher)",
+      "weight": 33.34,
+      "topics": ["number-concepts", "algebra-concepts", "graphs-tables-charts", "geometry-measures", "interpreting-representing-data"]
+    }
+  ],
+  "ao": {
+    "AO1": 40,
+    "AO2": 30,
+    "AO3": 30
+  },
+  "topics": [
+    { "id": "number-concepts", "name": "Number", "spec_refs": ["1"], "weight": 25, "subtopics": [
+      {"id": "integers-fractions-decimals", "name": "Integers, fractions and decimals", "weight": 40},
+      {"id": "indices-roots-factors", "name": "Indices, roots and factors", "weight": 30},
+      {"id": "approximation-rounding", "name": "Approximation and rounding", "weight": 30}
+    ]},
+    { "id": "algebra-concepts", "name": "Algebra", "spec_refs": ["2"], "weight": 30, "subtopics": [
+      {"id": "expressions-equations", "name": "Expressions, equations and identities", "weight": 40},
+      {"id": "graphs-of-functions", "name": "Graphs of functions", "weight": 30},
+      {"id": "sequences-and-proof", "name": "Sequences and proof", "weight": 30}
+    ]},
+    { "id": "ratio-proportion-rates", "name": "Ratio, proportion and rates of change", "spec_refs": ["3"], "weight": 20, "subtopics": [
+      {"id": "ratio-proportion", "name": "Ratio and proportion", "weight": 100}
+    ]},
+    { "id": "geometry-measures", "name": "Geometry and measures", "spec_refs": ["4"], "weight": 15, "subtopics": [
+      {"id": "polygons-angles", "name": "Polygons, angles and parallel lines", "weight": 30},
+      {"id": "mensuration", "name": "Mensuration", "weight": 40},
+      {"id": "trigonometry-vectors", "name": "Trigonometry and vectors", "weight": 30}
+    ]},
+    { "id": "probability", "name": "Probability", "spec_refs": ["5"], "weight": 5, "subtopics": [
+      {"id": "basic-probability", "name": "Basic probability", "weight": 100}
+    ]},
+    { "id": "statistics", "name": "Statistics", "spec_refs": ["6"], "weight": 5, "subtopics": [
+      {"id": "data-representation-analysis", "name": "Data representation and analysis", "weight": 100}
+    ]}
+  ],
+  "links": {
+    "spec_url": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics-j560.pdf",
+    "subject_page": "https://www.ocr.org.uk/qualifications/gcse/mathematics-j560-from-2015/"
+  }
+}

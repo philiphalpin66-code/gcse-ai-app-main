@@ -1,0 +1,124 @@
+
+{
+  "subject": "Biology",
+  "board": "AQA",
+  "spec_code": "8461",
+  "papers": [
+    {
+      "title": "Paper 1",
+      "weight": 50,
+      "topics": [
+        "cell-biology",
+        "organisation",
+        "infection-response",
+        "bioenergetics"
+      ]
+    },
+    {
+      "title": "Paper 2",
+      "weight": 50,
+      "topics": [
+        "homeostasis-response",
+        "inheritance-variation-evolution",
+        "ecology"
+      ]
+    }
+  ],
+  "ao": {
+    "AO1": 40,
+    "AO2": 40,
+    "AO3": 20
+  },
+  "topics": [
+    {
+      "id": "cell-biology",
+      "name": "Cell biology",
+      "spec_refs": ["4.1"],
+      "subtopics": [
+        {"id": "prokaryotic-eukaryotic", "name": "Prokaryotic and eukaryotic cells", "weight": 25},
+        {"id": "animal-plant-cells", "name": "Animal and plant cells", "weight": 25},
+        {"id": "cell-specialisation", "name": "Cell specialisation", "weight": 15},
+        {"id": "cell-differentiation", "name": "Cell differentiation", "weight": 10},
+        {"id": "microscopy", "name": "Microscopy", "weight": 15},
+        {"id": "mitosis", "name": "Mitosis", "weight": 10}
+      ],
+      "weight": 16
+    },
+    {
+      "id": "organisation",
+      "name": "Organisation",
+      "spec_refs": ["4.2"],
+      "subtopics": [
+        {"id": "digestive-system", "name": "The human digestive system", "weight": 30},
+        {"id": "heart-blood-vessels", "name": "The heart and blood vessels", "weight": 30},
+        {"id": "plant-tissues", "name": "Plant tissues, organs and systems", "weight": 25},
+        {"id": "cancer", "name": "Cancer", "weight": 15}
+      ],
+      "weight": 16
+    },
+    {
+      "id": "infection-response",
+      "name": "Infection and response",
+      "spec_refs": ["4.3"],
+      "subtopics": [
+        {"id": "communicable-diseases", "name": "Communicable diseases", "weight": 30},
+        {"id": "vaccination", "name": "Vaccination", "weight": 30},
+        {"id": "antibiotics-painkillers", "name": "Antibiotics and painkillers", "weight": 20},
+        {"id": "monoclonal-antibodies", "name": "Monoclonal antibodies", "weight": 20}
+      ],
+      "weight": 10
+    },
+    {
+      "id": "bioenergetics",
+      "name": "Bioenergetics",
+      "spec_refs": ["4.4"],
+      "subtopics": [
+        {"id": "photosynthesis", "name": "Photosynthesis", "weight": 40},
+        {"id": "respiration", "name": "Respiration", "weight": 40},
+        {"id": "metabolism", "name": "Metabolism", "weight": 20}
+      ],
+      "weight": 8
+    },
+    {
+      "id": "homeostasis-response",
+      "name": "Homeostasis and response",
+      "spec_refs": ["4.5"],
+      "subtopics": [
+        {"id": "nervous-system", "name": "The human nervous system", "weight": 30},
+        {"id": "endocrine-system", "name": "The endocrine system", "weight": 30},
+        {"id": "hormones-reproduction", "name": "Hormones in human reproduction", "weight": 20},
+        {"id": "plant-hormones", "name": "Plant hormones", "weight": 20}
+      ],
+      "weight": 12
+    },
+    {
+      "id": "inheritance-variation-evolution",
+      "name": "Inheritance, variation and evolution",
+      "spec_refs": ["4.6"],
+      "subtopics": [
+        {"id": "reproduction", "name": "Reproduction", "weight": 20},
+        {"id": "dna-genome", "name": "DNA and the genome", "weight": 20},
+        {"id": "genetic-inheritance", "name": "Genetic inheritance", "weight": 20},
+        {"id": "evolution", "name": "Theory of evolution", "weight": 20},
+        {"id": "classification", "name": "Classification of living organisms", "weight": 20}
+      ],
+      "weight": 18
+    },
+    {
+      "id": "ecology",
+      "name": "Ecology",
+      "spec_refs": ["4.7"],
+      "subtopics": [
+        {"id": "communities", "name": "Communities", "weight": 25},
+        {"id": "organisation-ecosystem", "name": "Organisation of an ecosystem", "weight": 25},
+        {"id": "biodiversity", "name": "Biodiversity and the effect of human interaction on ecosystems", "weight": 30},
+        {"id": "food-production", "name": "Food production", "weight": 20}
+      ],
+      "weight": 20
+    }
+  ],
+  "links": {
+    "spec_url": "https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF",
+    "subject_page": "https://www.aqa.org.uk/subjects/science/gcse/biology-8461"
+  }
+}

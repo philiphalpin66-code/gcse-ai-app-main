@@ -1,0 +1,45 @@
+
+{
+  "subject": "English Language",
+  "board": "OCR",
+  "spec_code": "J351",
+  "papers": [
+    {
+      "title": "Paper 1: Communicating information and ideas",
+      "weight": 50,
+      "topics": ["p1-reading-ocr", "p1-writing-ocr"]
+    },
+    {
+      "title": "Paper 2: Exploring effects and impact",
+      "weight": 50,
+      "topics": ["p2-reading-ocr", "p2-writing-ocr"]
+    }
+  ],
+  "ao": {
+    "AO1": 10, "AO2": 25, "AO3": 10, "AO4": 15, "AO5": 20, "AO6": 20
+  },
+  "topics": [
+    { "id": "p1-reading-ocr", "name": "Paper 1: Reading (20th & 21st-century Non-Fiction)", "spec_refs": ["J351/01"], "weight": 25, "subtopics": [
+      {"id": "p1-ocr-comprehension", "name": "Comprehension and inference", "weight": 30},
+      {"id": "p1-ocr-synthesis", "name": "Synthesis and summary", "weight": 30},
+      {"id": "p1-ocr-comparison", "name": "Comparison of texts", "weight": 40}
+    ]},
+    { "id": "p1-writing-ocr", "name": "Paper 1: Writing (Transactional)", "spec_refs": ["J351/01"], "weight": 25, "subtopics": [
+      {"id": "p1-ocr-transactional", "name": "Writing for purpose and audience", "weight": 50},
+      {"id": "p1-ocr-accuracy", "name": "Grammar, punctuation and spelling", "weight": 50}
+    ]},
+    { "id": "p2-reading-ocr", "name": "Paper 2: Reading (19th-century & Modern Fiction/Non-Fiction)", "spec_refs": ["J351/02"], "weight": 25, "subtopics": [
+      {"id": "p2-ocr-comprehension", "name": "Comprehension and inference", "weight": 30},
+      {"id": "p2-ocr-language-structure", "name": "Analysis of language and structure", "weight": 40},
+      {"id": "p2-ocr-evaluation", "name": "Critical evaluation", "weight": 30}
+    ]},
+    { "id": "p2-writing-ocr", "name": "Paper 2: Writing (Creative)", "spec_refs": ["J351/02"], "weight": 25, "subtopics": [
+      {"id": "p2-ocr-creative", "name": "Descriptive or narrative writing", "weight": 50},
+      {"id": "p2-ocr-accuracy", "name": "Grammar, punctuation and spelling", "weight": 50}
+    ]}
+  ],
+  "links": {
+    "spec_url": "https://www.ocr.org.uk/Images/164502-specification-accredited-gcse-english-language-j351.pdf",
+    "subject_page": "https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/"
+  }
+}

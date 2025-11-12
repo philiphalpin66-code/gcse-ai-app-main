@@ -1,0 +1,5 @@
+{
+  "name": "gcse app before firebase integration",
+  "description": "An interactive platform for UK GCSE students that generates personalized mock exam papers, provides instant AI feedback, and supports advanced student engagement features.",
+  "requestFramePermissions": []
+}

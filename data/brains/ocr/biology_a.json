@@ -1,0 +1,98 @@
+
+{
+  "subject": "Biology A (Gateway Science)",
+  "board": "OCR",
+  "spec_code": "J247",
+  "papers": [
+    {
+      "title": "Paper 1 (B1-B3)",
+      "weight": 50,
+      "topics": [
+        "cell-level-systems",
+        "scaling-up",
+        "organism-level-systems"
+      ]
+    },
+    {
+      "title": "Paper 2 (B4-B6)",
+      "weight": 50,
+      "topics": [
+        "community-level-systems",
+        "genes-inheritance-selection",
+        "global-challenges"
+      ]
+    }
+  ],
+  "ao": {
+    "AO1": 40,
+    "AO2": 40,
+    "AO3": 20
+  },
+  "topics": [
+    {
+      "id": "cell-level-systems",
+      "name": "Cell level systems",
+      "spec_refs": ["B1"],
+      "subtopics": [
+        {"id": "eukaryotes-prokaryotes", "name": "Eukaryotes and prokaryotes", "weight": 30},
+        {"id": "animal-plant-cells", "name": "Animal and plant cells", "weight": 30},
+        {"id": "cell-division", "name": "Cell division", "weight": 40}
+      ],
+      "weight": 16
+    },
+    {
+      "id": "scaling-up",
+      "name": "Scaling up",
+      "spec_refs": ["B2"],
+      "subtopics": [
+        {"id": "supplying-the-cell", "name": "Supplying the cell", "weight": 50},
+        {"id": "challenges-of-size", "name": "The challenges of size", "weight": 50}
+      ],
+      "weight": 16
+    },
+    {
+      "id": "organism-level-systems",
+      "name": "Organism level systems",
+      "spec_refs": ["B3"],
+      "subtopics": [
+        {"id": "coordination-control", "name": "Coordination and control – the nervous system", "weight": 50},
+        {"id": "maintaining-internal-environments", "name": "Maintaining internal environments", "weight": 50}
+      ],
+      "weight": 18
+    },
+    {
+      "id": "community-level-systems",
+      "name": "Community level systems",
+      "spec_refs": ["B4"],
+      "subtopics": [
+        {"id": "ecosystems", "name": "Ecosystems", "weight": 100}
+      ],
+      "weight": 15
+    },
+    {
+      "id": "genes-inheritance-selection",
+      "name": "Genes, inheritance and selection",
+      "spec_refs": ["B5"],
+      "subtopics": [
+        {"id": "inheritance", "name": "Inheritance", "weight": 50},
+        {"id": "natural-selection", "name": "Natural selection and evolution", "weight": 50}
+      ],
+      "weight": 17
+    },
+    {
+      "id": "global-challenges",
+      "name": "Global challenges",
+      "spec_refs": ["B6"],
+      "subtopics": [
+        {"id": "monitoring-maintaining-environment", "name": "Monitoring and maintaining the environment", "weight": 40},
+        {"id": "feeding-human-race", "name": "Feeding the human race", "weight": 30},
+        {"id": "monitoring-maintaining-health", "name": "Monitoring and maintaining health", "weight": 30}
+      ],
+      "weight": 18
+    }
+  ],
+  "links": {
+    "spec_url": "https://www.ocr.org.uk/Images/234595-specification-accredited-gcse-gateway-science-suite-biology-a-j247.pdf",
+    "subject_page": "https://www.ocr.org.uk/qualifications/gcse/gateway-science-suite-biology-a-j247-from-2016/"
+  }
+}

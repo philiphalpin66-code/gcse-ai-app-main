@@ -1,0 +1,47 @@
+
+{
+  "subject": "English Language",
+  "board": "AQA",
+  "spec_code": "8700",
+  "papers": [
+    {
+      "title": "Paper 1: Explorations in Creative Reading and Writing",
+      "weight": 50,
+      "topics": ["paper1-reading", "paper1-writing"]
+    },
+    {
+      "title": "Paper 2: Writers' Viewpoints and Perspectives",
+      "weight": 50,
+      "topics": ["paper2-reading", "paper2-writing"]
+    }
+  ],
+  "ao": {
+    "AO1": 10, "AO2": 25, "AO3": 10, "AO4": 15, "AO5": 20, "AO6": 20
+  },
+  "topics": [
+    { "id": "paper1-reading", "name": "Paper 1: Reading (Fiction)", "spec_refs": ["3.2.1"], "weight": 25, "subtopics": [
+      {"id": "p1-read-info-ideas", "name": "Identify and interpret explicit and implicit information", "weight": 25},
+      {"id": "p1-read-language", "name": "Analyse language and its effects", "weight": 25},
+      {"id": "p1-read-structure", "name": "Analyse structure and its effects", "weight": 25},
+      {"id": "p1-read-evaluate", "name": "Evaluate texts critically", "weight": 25}
+    ]},
+    { "id": "paper1-writing", "name": "Paper 1: Writing (Creative)", "spec_refs": ["3.2.1"], "weight": 25, "subtopics": [
+      {"id": "p1-write-descriptive", "name": "Descriptive or narrative writing", "weight": 50},
+      {"id": "p1-write-spag", "name": "Spelling, punctuation and grammar", "weight": 50}
+    ]},
+    { "id": "paper2-reading", "name": "Paper 2: Reading (Non-Fiction)", "spec_refs": ["3.2.2"], "weight": 25, "subtopics": [
+      {"id": "p2-read-info-ideas", "name": "Identify and interpret explicit and implicit information", "weight": 25},
+      {"id": "p2-read-synthesis", "name": "Synthesise evidence from different texts", "weight": 25},
+      {"id": "p2-read-compare", "name": "Compare writers' ideas and perspectives", "weight": 25},
+      {"id": "p2-read-language", "name": "Analyse how writers use language", "weight": 25}
+    ]},
+    { "id": "paper2-writing", "name": "Paper 2: Writing (Viewpoint)", "spec_refs": ["3.2.2"], "weight": 25, "subtopics": [
+      {"id": "p2-write-viewpoint", "name": "Writing to present a viewpoint", "weight": 50},
+      {"id": "p2-write-spag", "name": "Spelling, punctuation and grammar", "weight": 50}
+    ]}
+  ],
+  "links": {
+    "spec_url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF",
+    "subject_page": "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700"
+  }
+}

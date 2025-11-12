@@ -1,0 +1,128 @@
+
+{
+  "subject": "Physics",
+  "board": "AQA",
+  "spec_code": "8463",
+  "papers": [
+    {
+      "title": "Paper 1",
+      "weight": 50,
+      "topics": [
+        "energy",
+        "electricity",
+        "particle-model-of-matter",
+        "atomic-structure"
+      ]
+    },
+    {
+      "title": "Paper 2",
+      "weight": 50,
+      "topics": [
+        "forces",
+        "waves",
+        "magnetism-electromagnetism",
+        "space-physics"
+      ]
+    }
+  ],
+  "ao": {
+    "AO1": 40,
+    "AO2": 40,
+    "AO3": 20
+  },
+  "topics": [
+    {
+      "id": "energy",
+      "name": "Energy",
+      "spec_refs": ["4.1"],
+      "subtopics": [
+        {"id": "energy-stores-systems", "name": "Energy stores and systems", "weight": 30},
+        {"id": "conservation-dissipation", "name": "Conservation and dissipation of energy", "weight": 30},
+        {"id": "national-global-energy", "name": "National and global energy resources", "weight": 40}
+      ],
+      "weight": 15
+    },
+    {
+      "id": "electricity",
+      "name": "Electricity",
+      "spec_refs": ["4.2"],
+      "subtopics": [
+        {"id": "circuit-diagrams", "name": "Standard circuit diagram symbols", "weight": 20},
+        {"id": "series-parallel", "name": "Series and parallel circuits", "weight": 40},
+        {"id": "domestic-uses", "name": "Domestic uses and safety", "weight": 20},
+        {"id": "static-electricity", "name": "Static electricity", "weight": 20}
+      ],
+      "weight": 15
+    },
+    {
+      "id": "particle-model-of-matter",
+      "name": "Particle model of matter",
+      "spec_refs": ["4.3"],
+      "subtopics": [
+        {"id": "changes-of-state", "name": "Changes of state and the particle model", "weight": 50},
+        {"id": "internal-energy", "name": "Internal energy and energy transfers", "weight": 50}
+      ],
+      "weight": 8
+    },
+    {
+      "id": "atomic-structure",
+      "name": "Atomic structure",
+      "spec_refs": ["4.4"],
+      "subtopics": [
+        {"id": "atoms-isotopes", "name": "Atoms and isotopes", "weight": 30},
+        {"id": "atomic-model-history", "name": "Development of model of the atom", "weight": 20},
+        {"id": "radiation", "name": "Radioactive decay and nuclear radiation", "weight": 30},
+        {"id": "nuclear-fission-fusion", "name": "Nuclear fission and fusion", "weight": 20}
+      ],
+      "weight": 12
+    },
+    {
+      "id": "forces",
+      "name": "Forces",
+      "spec_refs": ["4.5"],
+      "subtopics": [
+        {"id": "scalar-vector", "name": "Scalar and vector quantities", "weight": 20},
+        {"id": "contact-non-contact", "name": "Contact and non-contact forces", "weight": 20},
+        {"id": "gravity", "name": "Gravity", "weight": 20},
+        {"id": "newtons-laws", "name": "Forces and motion (Newton's Laws)", "weight": 40}
+      ],
+      "weight": 20
+    },
+    {
+      "id": "waves",
+      "name": "Waves",
+      "spec_refs": ["4.6"],
+      "subtopics": [
+        {"id": "transverse-longitudinal", "name": "Transverse and longitudinal waves", "weight": 30},
+        {"id": "properties-of-waves", "name": "Properties of waves", "weight": 30},
+        {"id": "electromagnetic-waves", "name": "Electromagnetic waves", "weight": 40}
+      ],
+      "weight": 10
+    },
+    {
+      "id": "magnetism-electromagnetism",
+      "name": "Magnetism and electromagnetism",
+      "spec_refs": ["4.7"],
+      "subtopics": [
+        {"id": "magnetic-poles", "name": "Poles of a magnet", "weight": 25},
+        {"id": "motor-effect", "name": "The motor effect", "weight": 40},
+        {"id": "generator-effect", "name": "The generator effect and transformers", "weight": 35}
+      ],
+      "weight": 12
+    },
+    {
+      "id": "space-physics",
+      "name": "Space physics",
+      "spec_refs": ["4.8"],
+      "subtopics": [
+        {"id": "solar-system-stars", "name": "Our solar system and the life cycle of a star", "weight": 50},
+        {"id": "expanding-universe", "name": "The expanding universe", "weight": 50}
+      ],
+      "weight": 8
+    }
+  ],
+  "links": {
+    "spec_url": "https://filestore.aqa.org.uk/resources/physics/specifications/AQA-8463-SP-2016.PDF",
+    "subject_page": "https://www.aqa.org.uk/subjects/science/gcse/physics-8463"
+  }
+}
